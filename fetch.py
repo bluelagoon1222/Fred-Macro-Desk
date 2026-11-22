@@ -63,14 +63,17 @@ REG = [
     ("btc", "비트코인 (USD)", "ASSET", "extra", "USD", False),
     ("cr_us_hy", "미국 하이일드 스프레드", "CREDIT", "extra", "%", False),
     ("cr_us_ig", "미국 투자등급 스프레드", "CREDIT", "extra", "%", False),
+    ("cr_us_baa", "미국 Baa 회사채 − 10년 국채 (장기)", "CREDIT", "extra", "%", False),
     ("kr_corp_aa", "한국 회사채 AA- 3년", "CREDIT", "extra", "%", False),
     ("infl_bei10", "미국 10년 기대인플레이션 (BEI)", "INFL", "extra", "%", False),
     ("infl_real10", "미국 10년 실질금리 (TIPS)", "INFL", "extra", "%", False),
     ("vol_vix", "VIX (주식 변동성)", "VOL", "extra", "pt", False),
     ("vol_move", "MOVE (채권 변동성)", "VOL", "extra", "pt", False),
     ("eq_spx", "S&P500", "EQ", "extra", "pt", False),
+    ("eq_ndx100", "나스닥100", "EQ", "extra", "pt", False),
     ("eq_ndx", "나스닥 종합", "EQ", "extra", "pt", False),
     ("eq_kospi", "KOSPI", "EQ", "extra", "pt", False),
+    ("eq_kosdaq", "KOSDAQ", "EQ", "extra", "pt", False),
     ("eq_nikkei", "닛케이225", "EQ", "extra", "pt", False),
     ("eq_sx5e", "유로스톡스50", "EQ", "extra", "pt", False),
     ("m_us_cpi", "미국 CPI (전년비)", "MACRO", "extra", "%", False),
@@ -204,32 +207,56 @@ def ecos_series(stat, name):
     return clean(out), f"ECOS {stat} {it['ITEM_CODE']} ({cyc})"
 
 
+ERA = {"M": 1867, "T": 1911, "S": 1925, "H": 1988, "R": 2018}
+
+
+def jp_date(x):
+    x = x.strip()
+    m = re.match(r"^(\d{4})[/-](\d{1,2})[/-](\d{1,2})$", x)
+    if m:
+        y, mo, d = map(int, m.groups())
+        return f"{y:04d}-{mo:02d}-{d:02d}"
+    m = re.match(r"^([MTSHR])(\d{1,2})\.(\d{1,2})\.(\d{1,2})$", x)
+    if m:
+        e, y, mo, d = m.groups()
+        return f"{ERA[e] + int(y):04d}-{int(mo):02d}-{int(d):02d}"
+    return None
+
+
 def mof_jgb():
-    """Japan MOF benchmark yields (English CSV): historical + current month."""
-    cols = {}
-    for url in ("https://www.mof.go.jp/jgbs/reference/interest_rate/historical/jgbcme_all.csv",
-                "https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcme.csv"):
-        try:
-            rows = list(csv.reader(io.StringIO(text_of(http(url)))))
-        except Exception as e:
-            log("MOF " + url.rsplit("/", 1)[-1], False, e)
-            continue
-        hi = next((i for i, r in enumerate(rows) if r and r[0].strip().lower().startswith("date")), None)
-        if hi is None:
-            log("MOF parse", False, "header not found")
-            continue
-        head = [h.strip().upper() for h in rows[hi]]
-        for r in rows[hi + 1:]:
-            if not r or not re.match(r"\d{4}/\d{1,2}/\d{1,2}", r[0].strip()):
+    """Japan MOF benchmark JGB yields: English CSV, Japanese CSV as fallback."""
+    sets = [("https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv",
+             "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv"),
+            ("https://www.mof.go.jp/jgbs/reference/interest_rate/data/jgbcm_all.csv",
+             "https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcm.csv")]
+    for urls in sets:
+        cols = {}
+        for url in urls:
+            try:
+                rows = list(csv.reader(io.StringIO(text_of(http(url)))))
+            except Exception as e:
+                log("MOF " + url.rsplit("/", 1)[-1], False, e)
                 continue
-            y, m, d = map(int, r[0].strip().split("/"))
-            iso = f"{y:04d}-{m:02d}-{d:02d}"
-            for k in ("2Y", "5Y", "10Y", "30Y"):
-                if k in head and head.index(k) < len(r):
-                    v = num(r[head.index(k)])
-                    if v is not None:
-                        cols.setdefault(k, {})[iso] = v
-    return {k: sorted(v.items()) for k, v in cols.items()}
+            hi = next((i for i, r in enumerate(rows) if r and (r[0].strip().lower().startswith("date")
+                                                            or "基準日" in r[0])), None)
+            if hi is None:
+                log("MOF parse " + url.rsplit("/", 1)[-1], False, "header not found: " + str(rows[:2])[:150])
+                continue
+            head = [h.strip().upper().replace("年", "Y") for h in rows[hi]]
+            for r in rows[hi + 1:]:
+                if not r:
+                    continue
+                iso = jp_date(r[0])
+                if not iso:
+                    continue
+                for k in ("2Y", "5Y", "10Y", "30Y"):
+                    if k in head and head.index(k) < len(r):
+                        v = num(r[head.index(k)])
+                        if v is not None:
+                            cols.setdefault(k, {})[iso] = v
+        if cols.get("10Y"):
+            return {k: sorted(v.items()) for k, v in cols.items()}
+    return {}
 
 
 def boj_call():
@@ -276,8 +303,17 @@ def bund(m):
              headers={"Accept": "application/vnd.sdmx.data+csv;version=1.0.0"})
     rd = csv.DictReader(io.StringIO(text_of(r)))
     pairs = clean((row.get("TIME_PERIOD"), num(row.get("OBS_VALUE"))) for row in rd)
+    if pairs:
+        return pairs
+    r = http(f"https://api.statistiken.bundesbank.de/rest/download/{key.replace('/', '/', 1)}?format=csv&lang=en")
+    out = []
+    for line in text_of(r).splitlines():
+        parts = re.split(r"[;,]", line, maxsplit=1) if ";" not in line else line.split(";")
+        if len(parts) >= 2 and re.match(r"^\d{4}-\d{2}-\d{2}$", parts[0].strip()):
+            out.append((parts[0].strip(), num(parts[1].strip().replace(",", ".") if ";" in line else parts[1])))
+    pairs = clean(out)
     if not pairs:
-        raise RuntimeError("empty bundesbank response")
+        raise RuntimeError("empty bundesbank response: " + text_of(r)[:150].replace("\n", " | "))
     return pairs
 
 
@@ -310,6 +346,37 @@ def monthly_last(pairs):
     for t, v in pairs:
         d[t[:7] + "-01"] = v
     return sorted(d.items())
+
+
+def kr_exports():
+    """Find ECOS customs-based monthly export table automatically."""
+    j = http(f"https://ecos.bok.or.kr/api/StatisticTableList/{ECOS_KEY}/json/kr/1/10000").json()
+    tabs = [t for t in j.get("StatisticTableList", {}).get("row", [])
+            if "수출" in (t.get("STAT_NAME") or "") and t.get("SRCH_YN") == "Y"]
+    tried = []
+    for t in tabs:
+        try:
+            items = ecos_items(t["STAT_CODE"])
+        except Exception:
+            continue
+        for it in items:
+            nm = (it.get("ITEM_NAME") or "").replace(" ", "")
+            if it.get("CYCLE") != "M" or not nm.startswith("수출") or len(nm) > 12:
+                continue
+            tried.append(f"{t['STAT_CODE']} {t['STAT_NAME']} / {it['ITEM_CODE']} {it['ITEM_NAME']}")
+            try:
+                url = (f"https://ecos.bok.or.kr/api/StatisticSearch/{ECOS_KEY}/json/kr/1/2000/{t['STAT_CODE']}/M/"
+                       f"{it.get('START_TIME') or '196001'}/{TODAY.strftime('%Y%m')}/{it['ITEM_CODE']}")
+                rows = http(url).json()["StatisticSearch"]["row"]
+                p = clean((f"{r['TIME'][:4]}-{r['TIME'][4:6]}-01", num(r["DATA_VALUE"])) for r in rows)
+                if len(p) > 120 and p[-1][0] >= (TODAY - dt.timedelta(days=120)).isoformat():
+                    put("m_kr_exp", yoy(p), f"ECOS {t['STAT_CODE']} {t['STAT_NAME']} / {it['ITEM_NAME']} YoY")
+                    log("kr_exports candidates", True, " || ".join(tried))
+                    return
+            except Exception:
+                continue
+    log("kr_exports candidates", False, " || ".join(tried) or "no table found")
+    put("m_kr_exp", yoy(fred("XTEXVA01KRM667S")), "FRED XTEXVA01KRM667S YoY (fallback)")
 
 
 # ---------------------------------------------------------------- collect
@@ -394,12 +461,13 @@ def collect():
     # FX / commodities / credit / inflation / vol (FRED)
     for sid, fid in (("fx_usdjpy", "DEXJPUS"), ("fx_eurusd", "DEXUSEU"), ("fx_usdcny", "DEXCHUS"),
                      ("wti", "DCOILWTICO"), ("brent", "DCOILBRENTEU"),
-                     ("cr_us_hy", "BAMLH0A0HYM2"), ("cr_us_ig", "BAMLC0A0CM"),
+                     ("cr_us_hy", "BAMLH0A0HYM2"), ("cr_us_ig", "BAMLC0A0CM"), ("cr_us_baa", "BAA10Y"),
                      ("infl_bei10", "T10YIE"), ("infl_real10", "DFII10"), ("vol_vix", "VIXCLS")):
         attempt(sid, lambda sid=sid, fid=fid: put(sid, fred(fid), f"FRED {fid}"))
     # Yahoo
     for sid, sym in (("fx_dxy", "DX-Y.NYB"), ("silver", "SI=F"), ("copper", "HG=F"), ("vol_move", "^MOVE"),
-                     ("eq_spx", "^GSPC"), ("eq_ndx", "^IXIC"), ("eq_kospi", "^KS11"),
+                     ("eq_spx", "^GSPC"), ("eq_ndx100", "^NDX"), ("eq_ndx", "^IXIC"), ("eq_kospi", "^KS11"),
+                     ("eq_kosdaq", "^KQ11"),
                      ("eq_nikkei", "^N225"), ("eq_sx5e", "^STOXX50E")):
         attempt(sid, lambda sid=sid, sym=sym: put(sid, yahoo(sym), f"Yahoo {sym}"))
     # US monthly macro
@@ -425,7 +493,7 @@ def collect():
                 put(sid, yoy(fred(fb)), f"FRED {fb} YoY (fallback)")
         attempt("m_kr_cpi", lambda: kr_m("m_kr_cpi", "901Y009", "총지수", "KORCPIALLMINMEI"))
         attempt("m_kr_core", lambda: kr_m("m_kr_core", "901Y010", "농산물및석유류제외지수", None))
-        attempt("m_kr_exp", lambda: kr_m("m_kr_exp", "901Y011", "수출", "XTEXVA01KRM667S"))
+        attempt("m_kr_exp", kr_exports)
     else:
         attempt("m_kr_cpi", lambda: put("m_kr_cpi", yoy(fred("KORCPIALLMINMEI")), "FRED KORCPIALLMINMEI YoY"))
 
