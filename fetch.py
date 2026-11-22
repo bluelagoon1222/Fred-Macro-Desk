@@ -389,12 +389,21 @@ def cnn_fg():
         old = dict(zip(j["t"], j["v"]))
     except Exception:
         pass
-    r = http("https://production.dataviz.cnn.io/index/fearandgreed/graphdata/2018-01-01",
-             headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                                    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-                      "Accept": "application/json", "Referer": "https://edition.cnn.com/",
-                      "Origin": "https://edition.cnn.com"})
-    j = r.json()
+    hdr = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+           "Accept": "application/json, text/plain, */*", "Referer": "https://edition.cnn.com/",
+           "Origin": "https://edition.cnn.com"}
+    j, errs = None, []
+    for tail in ("/2020-07-15", "/2021-01-01", (TODAY - dt.timedelta(days=360)).strftime("/%Y-%m-%d"), ""):
+        try:
+            j = http("https://production.dataviz.cnn.io/index/fearandgreed/graphdata" + tail, headers=hdr, tries=2).json()
+            if j.get("fear_and_greed_historical", {}).get("data"):
+                break
+        except Exception as e:
+            errs.append(f"{tail or 'nodate'}: {e}")
+            j = None
+    if not j:
+        raise RuntimeError(" | ".join(errs))
     for p in j.get("fear_and_greed_historical", {}).get("data", []):
         d = dt.datetime.utcfromtimestamp(p["x"] / 1000).date().isoformat()
         old[d] = round(float(p["y"]), 1)
@@ -500,9 +509,9 @@ def collect():
             put("vol_fg", cnn_fg(), "CNN Fear & Greed")
         except Exception as e:
             # keep previously saved history if CNN blocks this run
+            log("vol_fg cnn", False, e)
             with open(f"{OUT}/vol_fg.json", encoding="utf-8") as f:
                 j = json.load(f)
-            log("vol_fg cnn", False, e)
             put("vol_fg", list(zip(j["t"], j["v"])), "CNN Fear & Greed (이전 저장분)")
     attempt("vol_fg", fg)
     # US monthly macro
