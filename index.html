@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MACRO DESK · 금리·환율 CHECK</title>
+<title>MACRO CHART CHECK</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 <style>
 :root{--bg:#0f1420;--card:#171e2d;--line:#2a3448;--tx:#e6ebf5;--sub:#8e9ab3;--acc:#f58220;--up:#ff5a5a;--dn:#4f8dff;--sel:#243352}
@@ -12,6 +12,7 @@ body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,"Ap
 a{color:var(--acc);text-decoration:none}
 header{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px}
 h1{margin:0;font-size:22px;letter-spacing:.5px}h1 span{color:var(--acc)}
+.tags{color:var(--acc);font-size:12px;margin-top:4px}
 .sub{color:var(--sub);font-size:12px}
 main{padding:16px 24px;max-width:1500px;margin:auto}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:14px}
@@ -56,9 +57,10 @@ footer{color:var(--sub);font-size:12px;padding:10px 24px 30px;max-width:1500px;m
 <body>
 <header>
   <div>
-    <div class="sub"><a href="https://bluelagoon1222.github.io/">← SJ Market Desk</a></div>
-    <h1>MACRO DESK <span>·</span> 금리·환율 CHECK</h1>
-    <div class="sub">미국·한국·일본·유럽 정책금리/시장금리 · 원/달러 · 금 · 비트코인 시계열 겹쳐보기</div>
+    <div class="sub" id="backlink"><a href="https://bluelagoon1222.github.io/" target="_top">← SJ Market Desk</a></div>
+    <h1>MACRO CHART CHECK</h1>
+    <div class="sub">미국·한국·일본·유럽 정책금리·국채금리와 환율·원자재·코인·신용·물가·주가지수를 시계열로 겹쳐 보기</div>
+    <div class="tags">#금리차트 #환율차트 #지수차트 #금차트 #코인차트 #유가차트 #물가차트</div>
   </div>
   <div class="sub" id="upd">데이터 불러오는 중…</div>
 </header>
@@ -251,6 +253,7 @@ async function downloadCSV(){
 }
 
 (async()=>{
+ try{if(window.top!==window)document.getElementById('backlink').style.display='none'}catch(e){}
  try{const j=await fetch('data/meta.json?t='+Date.now()).then(r=>r.json());
   LIST=j.series;LIST.forEach(s=>META[s.id]=s);META._upd=j.updated;
   const bad=LIST.filter(s=>!s.ok).length;
