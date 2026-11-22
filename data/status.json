@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T14:37:10.992200+09:00",
+ "updated": "2026-11-22T14:47:07.567353+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -67,34 +67,24 @@
    "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-20 n=17552"
   },
   {
-   "source": "MOF jgbcme_all.csv",
-   "ok": false,
-   "msg": "HTTP 404 :: https://www.mof.go.jp/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
-  },
-  {
-   "source": "MOF jgbcme.csv",
-   "ok": false,
-   "msg": "HTTP 404 :: https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcme.csv"
-  },
-  {
    "source": "jp_2y",
-   "ok": false,
-   "msg": "MOF JGB 2Y empty"
+   "ok": true,
+   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-19 n=12982"
   },
   {
    "source": "jp_5y",
-   "ok": false,
-   "msg": "MOF JGB 5Y empty"
+   "ok": true,
+   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-19 n=13343"
   },
   {
    "source": "jp_10y",
-   "ok": false,
-   "msg": "MOF JGB 10Y empty"
+   "ok": true,
+   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-19 n=9982"
   },
   {
    "source": "jp_30y",
-   "ok": false,
-   "msg": "MOF JGB 30Y empty"
+   "ok": true,
+   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-19 n=6666"
   },
   {
    "source": "jp_policy",
@@ -117,44 +107,24 @@
    "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-22 n=10188"
   },
   {
-   "source": "eu_2y bundesbank",
-   "ok": false,
-   "msg": "empty bundesbank response"
-  },
-  {
    "source": "eu_2y",
    "ok": true,
-   "msg": "ECB AAA SR_2Y (fallback) | 2004-09-06~2026-11-19 n=5678"
-  },
-  {
-   "source": "eu_5y bundesbank",
-   "ok": false,
-   "msg": "empty bundesbank response"
+   "msg": "Bundesbank BBSIS R02XX | 1997-08-07~2026-11-20 n=7436"
   },
   {
    "source": "eu_5y",
    "ok": true,
-   "msg": "ECB AAA SR_5Y (fallback) | 2004-09-06~2026-11-19 n=5678"
-  },
-  {
-   "source": "eu_10y bundesbank",
-   "ok": false,
-   "msg": "empty bundesbank response"
+   "msg": "Bundesbank BBSIS R05XX | 1997-08-07~2026-11-20 n=7436"
   },
   {
    "source": "eu_10y",
    "ok": true,
-   "msg": "ECB AAA SR_10Y (fallback) | 2004-09-06~2026-11-19 n=5678"
-  },
-  {
-   "source": "eu_30y bundesbank",
-   "ok": false,
-   "msg": "empty bundesbank response"
+   "msg": "Bundesbank BBSIS R10XX | 1997-08-07~2026-11-20 n=7436"
   },
   {
    "source": "eu_30y",
    "ok": true,
-   "msg": "ECB AAA SR_30Y (fallback) | 2004-09-06~2026-11-19 n=5678"
+   "msg": "Bundesbank BBSIS R30XX | 2000-08-01~2026-11-20 n=6684"
   },
   {
    "source": "fx_usdjpy",
@@ -190,6 +160,11 @@
    "source": "cr_us_ig",
    "ok": true,
    "msg": "FRED BAMLC0A0CM | 2023-11-21~2026-11-19 n=785"
+  },
+  {
+   "source": "cr_us_baa",
+   "ok": true,
+   "msg": "FRED BAA10Y | 1986-01-02~2026-11-19 n=10221"
   },
   {
    "source": "infl_bei10",
@@ -232,6 +207,11 @@
    "msg": "Yahoo ^GSPC | 1970-01-02~2026-11-20 n=14345"
   },
   {
+   "source": "eq_ndx100",
+   "ok": true,
+   "msg": "Yahoo ^NDX | 1985-10-01~2026-11-20 n=10366"
+  },
+  {
    "source": "eq_ndx",
    "ok": true,
    "msg": "Yahoo ^IXIC | 1971-02-05~2026-11-20 n=14067"
@@ -240,6 +220,11 @@
    "source": "eq_kospi",
    "ok": true,
    "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-20 n=7370"
+  },
+  {
+   "source": "eq_kosdaq",
+   "ok": true,
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-20 n=6431"
   },
   {
    "source": "eq_nikkei",
@@ -302,14 +287,14 @@
    "msg": "ECOS 901Y010 QB (M) YoY | 1976-01-01~2026-10-01 n=610"
   },
   {
-   "source": "m_kr_exp ecos",
-   "ok": false,
-   "msg": "{\"RESULT\": {\"CODE\": \"INFO-200\", \"MESSAGE\": \"해당하는 데이터가 없습니다.\"}}"
-  },
-  {
    "source": "m_kr_exp",
    "ok": true,
-   "msg": "FRED XTEXVA01KRM667S YoY (fallback) | 1958-01-01~2026-09-01 n=825"
+   "msg": "ECOS 901Y118 3.2.1. 수출입 총괄 / 수출금액 YoY | 2001-01-01~2026-09-01 n=309"
+  },
+  {
+   "source": "kr_exports candidates",
+   "ok": true,
+   "msg": "901Y118 3.2.1. 수출입 총괄 / T002 수출금액"
   },
   {
    "source": "gold",
