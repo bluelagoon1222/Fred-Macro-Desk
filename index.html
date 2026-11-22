@@ -164,7 +164,7 @@ footer{color:var(--sub);font-size:14px;padding:10px 24px 34px;max-width:1500px;m
     <div class="legend" id="legend"></div>
     <div id="msg" class="warn"></div>
     <div id="chart"></div>
-    <div class="tip">💡 차트 아래 주황색 막대의 양 끝 손잡이를 끌면 구간을 확대할 수 있고, 차트 위에서 손가락·마우스를 대면 날짜별 값이 보입니다.</div>
+    <div class="tip">💡 차트 아래 막대: <b>양 끝 주황 손잡이</b>를 끌면 보는 구간이 넓어지거나 좁아지고, <b>가운데 밝은 구간</b>을 잡고 좌우로 끌면 같은 길이로 구간이 이동합니다. 차트 위에 마우스·손가락을 대면 날짜별 값이 보이고, 기간 버튼을 다시 누르면 원래대로 돌아갑니다.</div>
   </div>
 
   <div class="card">
@@ -307,7 +307,7 @@ async function refresh(noSave){
     h+=`<br>${p.marker}${p.seriesName}: <b>${txt}</b>`});return h}},
   xAxis:{type:'time',min:s,max:e,axisLabel:{color:'#b8c2d6',fontSize:mob?11.5:13,hideOverlap:true,formatter:{year:'{yyyy}년',month:'{M}월',day:'{M}/{d}',hour:'',minute:'',second:'',millisecond:''}},axisLine:{lineStyle:{color:'#5a6784'}}},
   yAxis:yAxes,
-  dataZoom:[{type:'inside'},{type:'slider',bottom:mob?18:22,height:mob?30:32,textStyle:{color:'#b8c2d6',fontSize:12},borderColor:'#3f4c68',fillerColor:'rgba(245,130,32,.18)',handleStyle:{color:'#f58220'},moveHandleStyle:{color:'#f58220'}}],
+  dataZoom:[{type:'inside'},{type:'slider',brushSelect:false,showDetail:true,bottom:mob?18:22,height:mob?30:32,textStyle:{color:'#b8c2d6',fontSize:12},borderColor:'#3f4c68',fillerColor:'rgba(245,130,32,.18)',handleStyle:{color:'#f58220'},moveHandleStyle:{color:'#f58220'}}],
   series},true);
  $('msg').textContent=[...new Set(notes)].join(' · ');
  renderTable();
