@@ -1,0 +1,325 @@
+{
+ "updated": "2026-11-22T14:37:10.992200+09:00",
+ "log": [
+  {
+   "source": "us_policy",
+   "ok": true,
+   "msg": "FRED DFEDTAR+DFEDTARU | 1982-09-27~2026-11-21 n=16127"
+  },
+  {
+   "source": "us_eff",
+   "ok": true,
+   "msg": "FRED DFF | 1954-07-01~2026-11-19 n=26440"
+  },
+  {
+   "source": "us_2y",
+   "ok": true,
+   "msg": "FRED DGS2 | 1976-06-01~2026-11-19 n=12614"
+  },
+  {
+   "source": "us_5y",
+   "ok": true,
+   "msg": "FRED DGS5 | 1962-01-02~2026-11-19 n=16206"
+  },
+  {
+   "source": "us_10y",
+   "ok": true,
+   "msg": "FRED DGS10 | 1962-01-02~2026-11-19 n=16206"
+  },
+  {
+   "source": "us_30y",
+   "ok": true,
+   "msg": "FRED DGS30 | 1977-02-15~2026-11-19 n=12436"
+  },
+  {
+   "source": "kr_policy",
+   "ok": true,
+   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-19 n=10059"
+  },
+  {
+   "source": "kr_2y",
+   "ok": true,
+   "msg": "ECOS 817Y002 010195000 (D) | 2021-03-10~2026-11-20 n=1403"
+  },
+  {
+   "source": "kr_3y",
+   "ok": true,
+   "msg": "ECOS 817Y002 010200000 (D) | 1998-11-13~2026-11-20 n=6943"
+  },
+  {
+   "source": "kr_5y",
+   "ok": true,
+   "msg": "ECOS 817Y002 010200001 (D) | 2000-01-04~2026-11-20 n=6654"
+  },
+  {
+   "source": "kr_10y",
+   "ok": true,
+   "msg": "ECOS 817Y002 010210000 (D) | 2000-12-18~2026-11-20 n=6419"
+  },
+  {
+   "source": "kr_30y",
+   "ok": true,
+   "msg": "ECOS 817Y002 010230000 (D) | 2012-09-11~2026-11-20 n=3498"
+  },
+  {
+   "source": "fx_usdkrw",
+   "ok": true,
+   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-20 n=17552"
+  },
+  {
+   "source": "MOF jgbcme_all.csv",
+   "ok": false,
+   "msg": "HTTP 404 :: https://www.mof.go.jp/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
+  },
+  {
+   "source": "MOF jgbcme.csv",
+   "ok": false,
+   "msg": "HTTP 404 :: https://www.mof.go.jp/jgbs/reference/interest_rate/jgbcme.csv"
+  },
+  {
+   "source": "jp_2y",
+   "ok": false,
+   "msg": "MOF JGB 2Y empty"
+  },
+  {
+   "source": "jp_5y",
+   "ok": false,
+   "msg": "MOF JGB 5Y empty"
+  },
+  {
+   "source": "jp_10y",
+   "ok": false,
+   "msg": "MOF JGB 10Y empty"
+  },
+  {
+   "source": "jp_30y",
+   "ok": false,
+   "msg": "MOF JGB 30Y empty"
+  },
+  {
+   "source": "jp_policy",
+   "ok": true,
+   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-18 n=7077"
+  },
+  {
+   "source": "eu_dfr",
+   "ok": true,
+   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-22 n=10188"
+  },
+  {
+   "source": "eu_mro",
+   "ok": true,
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-22 n=7157"
+  },
+  {
+   "source": "eu_mlf",
+   "ok": true,
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-22 n=10188"
+  },
+  {
+   "source": "eu_2y bundesbank",
+   "ok": false,
+   "msg": "empty bundesbank response"
+  },
+  {
+   "source": "eu_2y",
+   "ok": true,
+   "msg": "ECB AAA SR_2Y (fallback) | 2004-09-06~2026-11-19 n=5678"
+  },
+  {
+   "source": "eu_5y bundesbank",
+   "ok": false,
+   "msg": "empty bundesbank response"
+  },
+  {
+   "source": "eu_5y",
+   "ok": true,
+   "msg": "ECB AAA SR_5Y (fallback) | 2004-09-06~2026-11-19 n=5678"
+  },
+  {
+   "source": "eu_10y bundesbank",
+   "ok": false,
+   "msg": "empty bundesbank response"
+  },
+  {
+   "source": "eu_10y",
+   "ok": true,
+   "msg": "ECB AAA SR_10Y (fallback) | 2004-09-06~2026-11-19 n=5678"
+  },
+  {
+   "source": "eu_30y bundesbank",
+   "ok": false,
+   "msg": "empty bundesbank response"
+  },
+  {
+   "source": "eu_30y",
+   "ok": true,
+   "msg": "ECB AAA SR_30Y (fallback) | 2004-09-06~2026-11-19 n=5678"
+  },
+  {
+   "source": "fx_usdjpy",
+   "ok": true,
+   "msg": "FRED DEXJPUS | 1971-01-04~2026-11-13 n=14003"
+  },
+  {
+   "source": "fx_eurusd",
+   "ok": true,
+   "msg": "FRED DEXUSEU | 1999-01-04~2026-11-13 n=6988"
+  },
+  {
+   "source": "fx_usdcny",
+   "ok": true,
+   "msg": "FRED DEXCHUS | 1981-01-02~2026-11-13 n=11449"
+  },
+  {
+   "source": "wti",
+   "ok": true,
+   "msg": "FRED DCOILWTICO | 1986-01-02~2026-11-17 n=9547"
+  },
+  {
+   "source": "brent",
+   "ok": true,
+   "msg": "FRED DCOILBRENTEU | 1987-05-20~2026-11-17 n=9132"
+  },
+  {
+   "source": "cr_us_hy",
+   "ok": true,
+   "msg": "FRED BAMLH0A0HYM2 | 2023-11-21~2026-11-19 n=786"
+  },
+  {
+   "source": "cr_us_ig",
+   "ok": true,
+   "msg": "FRED BAMLC0A0CM | 2023-11-21~2026-11-19 n=785"
+  },
+  {
+   "source": "infl_bei10",
+   "ok": true,
+   "msg": "FRED T10YIE | 2003-01-02~2026-11-20 n=5976"
+  },
+  {
+   "source": "infl_real10",
+   "ok": true,
+   "msg": "FRED DFII10 | 2003-01-02~2026-11-19 n=5975"
+  },
+  {
+   "source": "vol_vix",
+   "ok": true,
+   "msg": "FRED VIXCLS | 1990-01-02~2026-11-19 n=9321"
+  },
+  {
+   "source": "fx_dxy",
+   "ok": true,
+   "msg": "Yahoo DX-Y.NYB | 1971-01-04~2026-11-20 n=14191"
+  },
+  {
+   "source": "silver",
+   "ok": true,
+   "msg": "Yahoo SI=F | 2000-08-29~2026-11-20 n=6583"
+  },
+  {
+   "source": "copper",
+   "ok": true,
+   "msg": "Yahoo HG=F | 2000-08-29~2026-11-20 n=6586"
+  },
+  {
+   "source": "vol_move",
+   "ok": true,
+   "msg": "Yahoo ^MOVE | 2002-11-12~2026-11-20 n=5941"
+  },
+  {
+   "source": "eq_spx",
+   "ok": true,
+   "msg": "Yahoo ^GSPC | 1970-01-02~2026-11-20 n=14345"
+  },
+  {
+   "source": "eq_ndx",
+   "ok": true,
+   "msg": "Yahoo ^IXIC | 1971-02-05~2026-11-20 n=14067"
+  },
+  {
+   "source": "eq_kospi",
+   "ok": true,
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-20 n=7370"
+  },
+  {
+   "source": "eq_nikkei",
+   "ok": true,
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-20 n=13986"
+  },
+  {
+   "source": "eq_sx5e",
+   "ok": true,
+   "msg": "Yahoo ^STOXX50E | 2007-03-30~2026-11-20 n=4926"
+  },
+  {
+   "source": "m_us_cpi",
+   "ok": true,
+   "msg": "FRED CPIAUCSL YoY | 1948-01-01~2026-10-01 n=945"
+  },
+  {
+   "source": "m_us_core",
+   "ok": true,
+   "msg": "FRED CPILFESL YoY | 1958-01-01~2026-10-01 n=825"
+  },
+  {
+   "source": "m_us_pce",
+   "ok": true,
+   "msg": "FRED PCEPILFE YoY | 1960-01-01~2026-09-01 n=801"
+  },
+  {
+   "source": "m_us_unemp",
+   "ok": true,
+   "msg": "FRED UNRATE | 1948-01-01~2026-10-01 n=945"
+  },
+  {
+   "source": "m_us_nfp",
+   "ok": true,
+   "msg": "FRED PAYEMS MoM | 1939-02-01~2026-10-01 n=1053"
+  },
+  {
+   "source": "m_us_m2",
+   "ok": true,
+   "msg": "FRED M2SL YoY | 1960-01-01~2026-09-01 n=801"
+  },
+  {
+   "source": "m_us_fedbs",
+   "ok": true,
+   "msg": "FRED WALCL (weekly, 조달러) | 2002-12-18~2026-11-18 n=1249"
+  },
+  {
+   "source": "kr_corp_aa",
+   "ok": true,
+   "msg": "ECOS 817Y002 010300000 (D) | 1995-01-03~2026-11-20 n=8093"
+  },
+  {
+   "source": "m_kr_cpi",
+   "ok": true,
+   "msg": "ECOS 901Y009 0 (M) YoY | 1966-01-01~2026-10-01 n=730"
+  },
+  {
+   "source": "m_kr_core",
+   "ok": true,
+   "msg": "ECOS 901Y010 QB (M) YoY | 1976-01-01~2026-10-01 n=610"
+  },
+  {
+   "source": "m_kr_exp ecos",
+   "ok": false,
+   "msg": "{\"RESULT\": {\"CODE\": \"INFO-200\", \"MESSAGE\": \"해당하는 데이터가 없습니다.\"}}"
+  },
+  {
+   "source": "m_kr_exp",
+   "ok": true,
+   "msg": "FRED XTEXVA01KRM667S YoY (fallback) | 1958-01-01~2026-09-01 n=825"
+  },
+  {
+   "source": "gold",
+   "ok": true,
+   "msg": "Yahoo GC=F | 2000-08-29~2026-11-20 n=6582"
+  },
+  {
+   "source": "btc",
+   "ok": true,
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-22 n=4449"
+  }
+ ]
+}
