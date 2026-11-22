@@ -195,10 +195,12 @@ const PRESETS=[
  ["미국 물가 vs 정책금리",["m_us_cpi","m_us_core","m_us_pce","us_policy"]],
  ["한국 물가·수출 vs 기준금리",["m_kr_cpi","m_kr_exp","kr_policy"]],
  ["달러인덱스 vs 원/달러",["fx_dxy","fx_usdkrw"],"pct"],
- ["한·미 주가지수",["eq_spx","eq_ndx100","eq_kospi","eq_kosdaq"],"pct"]];
+ ["한·미 주가지수",["eq_spx","eq_ndx100","eq_kospi","eq_kosdaq"],"pct"],
+ ["공포·탐욕 vs S&P500",["vol_fg","eq_spx"]],
+ ["공포·탐욕 vs VIX",["vol_fg","vol_vix"]]];
 const COLORS=["#f58220","#4f8dff","#3ccf91","#ff5a8a","#b48cff","#ffd24f","#33d1e0","#ff8f5a","#9be15d","#e8e8e8","#c97b4f","#7aa2ff"];
-const GROUP_NAME={US:"미국 금리",KR:"한국 금리",JP:"일본 금리",EU:"유럽 금리",SPREAD:"금리차",FX:"환율",ASSET:"원자재·코인",CREDIT:"신용",INFL:"물가·실질금리",VOL:"변동성",EQ:"주가지수",MACRO:"거시 (월별)"};
-const TABS=["FX","ASSET","EQ","INFL","CREDIT","VOL","MACRO","SPREAD"];let tab="FX";
+const GROUP_NAME={US:"미국 금리",KR:"한국 금리",JP:"일본 금리",EU:"유럽 금리",SPREAD:"금리차",FX:"환율",ASSET:"원자재·코인",CREDIT:"신용",INFL:"물가·실질금리",VOL:"심리·변동성",EQ:"주가지수",MACRO:"거시 (월별)"};
+const TABS=["FX","ASSET","EQ","VOL","INFL","CREDIT","MACRO","SPREAD"];let tab="FX";
 let META={},LIST=[],cache={},selected=new Set(),order=[],colorMap={};
 let period="1Y",mode="raw",custom=null;
 const $=id=>document.getElementById(id);
@@ -346,7 +348,7 @@ async function downloadCSV(){
   $('upd').innerHTML=`갱신: ${j.updated}`+(bad?` · <span class="warn">수집 실패 ${bad}개</span>`:'');
   $('foot').innerHTML='<b>출처</b> · FRED(미 연준 경제데이터) · ECOS(한국은행 경제통계) · 일본 재무성·일본은행 · ECB(유럽중앙은행) · 독일 분데스방크 · Yahoo Finance<br>'+
    '· 일별 종가 기준이며 실시간 시세가 아닙니다. 국가별 휴장일이 달라 날짜가 일부 다를 수 있습니다.<br>· 독일 국채 금리는 분데스방크 추정 수익률 곡선 값이며, 수집이 안 되면 유로존 AAA 국채 곡선으로 대체합니다(표에 * 표시). 금·은·구리는 뉴욕 선물 근월물 종가입니다.<br>'+
-   '· 미국 하이일드·투자등급 스프레드는 FRED가 최근 3년치만 제공합니다. 장기 비교는 "미국 Baa 회사채 − 10년 국채"(1986년~)를 쓰세요.<br>· 정책금리는 결정이 반영된 날짜 기준의 계단형 선으로 표시합니다. 표에서 지표명 위에 마우스를 올리면 데이터 출처가 보입니다.';
+   '· 미국 하이일드·투자등급 스프레드는 FRED가 최근 3년치만 제공합니다. 장기 비교는 "미국 Baa 회사채 − 10년 국채"(1986년~)를 쓰세요.<br>· CNN 공포·탐욕 지수는 0(극단적 공포)~100(극단적 탐욕)이며, CNN 공개 화면의 데이터를 받아 매일 쌓아 갑니다(공식 API 아님).<br>· 정책금리는 결정이 반영된 날짜 기준의 계단형 선으로 표시합니다. 표에서 지표명 위에 마우스를 올리면 데이터 출처가 보입니다.';
   buildUI();if(!restore()){PRESETS[0][1].forEach(i=>add(i,false))}refresh();
  }catch(e){$('upd').innerHTML='<span class="warn">데이터 없음 — 첫 수집(Actions) 실행 전입니다</span>';console.error(e)}
 })();

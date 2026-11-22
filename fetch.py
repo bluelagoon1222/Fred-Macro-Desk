@@ -69,6 +69,7 @@ REG = [
     ("infl_real10", "미국 10년 실질금리 (TIPS)", "INFL", "extra", "%", False),
     ("vol_vix", "VIX (주식 변동성)", "VOL", "extra", "pt", False),
     ("vol_move", "MOVE (채권 변동성)", "VOL", "extra", "pt", False),
+    ("vol_fg", "CNN 공포·탐욕 지수 (0~100)", "VOL", "extra", "pt", False),
     ("eq_spx", "S&P500", "EQ", "extra", "pt", False),
     ("eq_ndx100", "나스닥100", "EQ", "extra", "pt", False),
     ("eq_ndx", "나스닥 종합", "EQ", "extra", "pt", False),
@@ -379,6 +380,30 @@ def kr_exports():
     put("m_kr_exp", yoy(fred("XTEXVA01KRM667S")), "FRED XTEXVA01KRM667S YoY (fallback)")
 
 
+def cnn_fg():
+    """CNN Fear & Greed (unofficial endpoint). History is merged with our saved file so it keeps growing."""
+    old = {}
+    try:
+        with open(f"{OUT}/vol_fg.json", encoding="utf-8") as f:
+            j = json.load(f)
+        old = dict(zip(j["t"], j["v"]))
+    except Exception:
+        pass
+    r = http("https://production.dataviz.cnn.io/index/fearandgreed/graphdata/2018-01-01",
+             headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+                      "Accept": "application/json", "Referer": "https://edition.cnn.com/",
+                      "Origin": "https://edition.cnn.com"})
+    j = r.json()
+    for p in j.get("fear_and_greed_historical", {}).get("data", []):
+        d = dt.datetime.utcfromtimestamp(p["x"] / 1000).date().isoformat()
+        old[d] = round(float(p["y"]), 1)
+    cur = j.get("fear_and_greed", {})
+    if cur.get("score") is not None and cur.get("timestamp"):
+        old[cur["timestamp"][:10]] = round(float(cur["score"]), 1)
+    return sorted(old.items())
+
+
 # ---------------------------------------------------------------- collect
 DATA = {}
 
@@ -470,6 +495,16 @@ def collect():
                      ("eq_kosdaq", "^KQ11"),
                      ("eq_nikkei", "^N225"), ("eq_sx5e", "^STOXX50E")):
         attempt(sid, lambda sid=sid, sym=sym: put(sid, yahoo(sym), f"Yahoo {sym}"))
+    def fg():
+        try:
+            put("vol_fg", cnn_fg(), "CNN Fear & Greed")
+        except Exception as e:
+            # keep previously saved history if CNN blocks this run
+            with open(f"{OUT}/vol_fg.json", encoding="utf-8") as f:
+                j = json.load(f)
+            log("vol_fg cnn", False, e)
+            put("vol_fg", list(zip(j["t"], j["v"])), "CNN Fear & Greed (이전 저장분)")
+    attempt("vol_fg", fg)
     # US monthly macro
     for sid, fid, fn, lab in (("m_us_cpi", "CPIAUCSL", yoy, "YoY"), ("m_us_core", "CPILFESL", yoy, "YoY"),
                               ("m_us_pce", "PCEPILFE", yoy, "YoY"), ("m_us_unemp", "UNRATE", None, ""),
