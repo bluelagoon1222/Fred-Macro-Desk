@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T15:43:08.295299+09:00",
+ "updated": "2026-11-22T16:06:31.525026+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -238,8 +238,8 @@
   },
   {
    "source": "vol_fg",
-   "ok": false,
-   "msg": "[Errno 2] No such file or directory: 'data/vol_fg.json'"
+   "ok": true,
+   "msg": "CNN Fear & Greed | 2020-07-15~2026-11-20 n=1597"
   },
   {
    "source": "m_us_cpi",
@@ -309,7 +309,7 @@
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-22 n=4449"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-22 n=4450"
   }
  ]
 }
