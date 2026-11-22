@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T14:47:07.567353+09:00",
+ "updated": "2026-11-22T15:43:08.295299+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -34,7 +34,7 @@
   {
    "source": "kr_policy",
    "ok": true,
-   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-19 n=10059"
+   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-20 n=10060"
   },
   {
    "source": "kr_2y",
@@ -235,6 +235,11 @@
    "source": "eq_sx5e",
    "ok": true,
    "msg": "Yahoo ^STOXX50E | 2007-03-30~2026-11-20 n=4926"
+  },
+  {
+   "source": "vol_fg",
+   "ok": false,
+   "msg": "[Errno 2] No such file or directory: 'data/vol_fg.json'"
   },
   {
    "source": "m_us_cpi",
