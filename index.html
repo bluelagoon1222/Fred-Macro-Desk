@@ -206,6 +206,15 @@ let period="1Y",mode="raw",custom=null;
 const $=id=>document.getElementById(id);
 const chart=echarts.init($('chart'),null,{renderer:'canvas'});
 window.addEventListener('resize',()=>{chart.resize();refresh(true)});
+/* 구간 막대: 가운데(이동 구간)는 손 모양, 누르고 있는 동안은 쥔 손 모양 */
+const zr=chart.getZr();
+function grabCursor(){zr.storage.getDisplayList(true).forEach(el=>{
+  if(el.cursor==='move'){el.cursor='grab';return}
+  if(el.cursor==='ew-resize'&&el.type==='rect'&&el.draggable){const r=el.getBoundingRect();if(r.width>24)el.cursor='grab'}})}
+chart.on('finished',grabCursor);
+zr.on('mousedown',e=>{if(e.target&&e.target.cursor==='grab'){e.target.cursor='grabbing';zr.setCursorStyle('grabbing')}});
+const ungrab=()=>{zr.storage.getDisplayList(true).forEach(el=>{if(el.cursor==='grabbing')el.cursor='grab'})};
+zr.on('mouseup',ungrab);window.addEventListener('mouseup',ungrab);
 const isMobile=()=>window.innerWidth<=640;
 
 function save(){try{localStorage.setItem('macrodesk',JSON.stringify({s:order,period,mode}))}catch(e){}}
