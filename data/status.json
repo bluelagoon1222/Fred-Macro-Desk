@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T06:37:44.925488+09:00",
+ "updated": "2026-11-24T14:49:27.231271+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -24,12 +24,12 @@
   {
    "source": "us_10y",
    "ok": true,
-   "msg": "FRED DGS10 | 1962-01-02~2026-11-19 n=16206"
+   "msg": "FRED DGS10 | 1962-01-02~2026-11-20 n=16207"
   },
   {
    "source": "us_30y",
    "ok": true,
-   "msg": "FRED DGS30 | 1977-02-15~2026-11-19 n=12436"
+   "msg": "FRED DGS30 | 1977-02-15~2026-11-20 n=12437"
   },
   {
    "source": "kr_policy",
@@ -64,47 +64,47 @@
   {
    "source": "fx_usdkrw",
    "ok": true,
-   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-23 n=17553"
+   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-24 n=17554"
   },
   {
    "source": "jp_2y",
    "ok": true,
-   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-19 n=12982"
+   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-20 n=12983"
   },
   {
    "source": "jp_5y",
    "ok": true,
-   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-19 n=13343"
+   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-20 n=13344"
   },
   {
    "source": "jp_10y",
    "ok": true,
-   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-19 n=9982"
+   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-20 n=9983"
   },
   {
    "source": "jp_30y",
    "ok": true,
-   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-19 n=6666"
+   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-20 n=6667"
   },
   {
    "source": "jp_policy",
    "ok": true,
-   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-18 n=7077"
+   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-19 n=7078"
   },
   {
    "source": "eu_dfr",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-23 n=10189"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-24 n=10190"
   },
   {
    "source": "eu_mro",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-23 n=7158"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-24 n=7159"
   },
   {
    "source": "eu_mlf",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-23 n=10189"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-24 n=10190"
   },
   {
    "source": "eu_2y",
@@ -164,12 +164,12 @@
   {
    "source": "cr_us_baa",
    "ok": true,
-   "msg": "FRED BAA10Y | 1986-01-02~2026-11-19 n=10221"
+   "msg": "FRED BAA10Y | 1986-01-02~2026-11-20 n=10222"
   },
   {
    "source": "infl_bei10",
    "ok": true,
-   "msg": "FRED T10YIE | 2003-01-02~2026-11-20 n=5976"
+   "msg": "FRED T10YIE | 2003-01-02~2026-11-23 n=5977"
   },
   {
    "source": "infl_real10",
@@ -184,17 +184,17 @@
   {
    "source": "fx_dxy",
    "ok": true,
-   "msg": "Yahoo DX-Y.NYB | 1971-01-04~2026-11-23 n=14192"
+   "msg": "Yahoo DX-Y.NYB | 1971-01-04~2026-11-24 n=14193"
   },
   {
    "source": "silver",
    "ok": true,
-   "msg": "Yahoo SI=F | 2000-08-29~2026-11-23 n=6584"
+   "msg": "Yahoo SI=F | 2000-08-29~2026-11-24 n=6585"
   },
   {
    "source": "copper",
    "ok": true,
-   "msg": "Yahoo HG=F | 2000-08-29~2026-11-23 n=6587"
+   "msg": "Yahoo HG=F | 2000-08-29~2026-11-24 n=6588"
   },
   {
    "source": "vol_move",
@@ -219,17 +219,17 @@
   {
    "source": "eq_kospi",
    "ok": true,
-   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-20 n=7370"
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-24 n=7372"
   },
   {
    "source": "eq_kosdaq",
    "ok": true,
-   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-20 n=6431"
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-24 n=6433"
   },
   {
    "source": "eq_nikkei",
    "ok": true,
-   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-20 n=13986"
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-24 n=13987"
   },
   {
    "source": "eq_sx5e",
@@ -239,7 +239,7 @@
   {
    "source": "vol_fg",
    "ok": true,
-   "msg": "CNN Fear & Greed | 2020-07-15~2026-11-23 n=1598"
+   "msg": "CNN Fear & Greed | 2020-07-15~2026-11-24 n=1599"
   },
   {
    "source": "m_us_cpi",
@@ -304,12 +304,12 @@
   {
    "source": "gold",
    "ok": true,
-   "msg": "Yahoo GC=F | 2000-08-29~2026-11-23 n=6583"
+   "msg": "Yahoo GC=F | 2000-08-29~2026-11-24 n=6584"
   },
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-23 n=4451"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-24 n=4451"
   }
  ]
 }
