@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-25T13:49:34.693932+09:00",
+ "updated": "2026-11-26T04:31:29.184862+09:00",
  "log": [
   {
    "source": "us_policy",
    "ok": true,
-   "msg": "FRED DFEDTAR+DFEDTARU | 1982-09-27~2026-11-24 n=16130"
+   "msg": "FRED DFEDTAR+DFEDTARU | 1982-09-27~2026-11-25 n=16131"
   },
   {
    "source": "us_eff",
@@ -34,32 +34,32 @@
   {
    "source": "kr_policy",
    "ok": true,
-   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-22 n=10062"
+   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-23 n=10063"
   },
   {
    "source": "kr_2y",
    "ok": true,
-   "msg": "ECOS 817Y002 010195000 (D) | 2021-03-10~2026-11-24 n=1405"
+   "msg": "ECOS 817Y002 010195000 (D) | 2021-03-10~2026-11-25 n=1406"
   },
   {
    "source": "kr_3y",
    "ok": true,
-   "msg": "ECOS 817Y002 010200000 (D) | 1998-11-13~2026-11-24 n=6945"
+   "msg": "ECOS 817Y002 010200000 (D) | 1998-11-13~2026-11-25 n=6946"
   },
   {
    "source": "kr_5y",
    "ok": true,
-   "msg": "ECOS 817Y002 010200001 (D) | 2000-01-04~2026-11-24 n=6656"
+   "msg": "ECOS 817Y002 010200001 (D) | 2000-01-04~2026-11-25 n=6657"
   },
   {
    "source": "kr_10y",
    "ok": true,
-   "msg": "ECOS 817Y002 010210000 (D) | 2000-12-18~2026-11-24 n=6421"
+   "msg": "ECOS 817Y002 010210000 (D) | 2000-12-18~2026-11-25 n=6422"
   },
   {
    "source": "kr_30y",
    "ok": true,
-   "msg": "ECOS 817Y002 010230000 (D) | 2012-09-11~2026-11-24 n=3500"
+   "msg": "ECOS 817Y002 010230000 (D) | 2012-09-11~2026-11-25 n=3501"
   },
   {
    "source": "fx_usdkrw",
@@ -109,22 +109,22 @@
   {
    "source": "eu_2y",
    "ok": true,
-   "msg": "Bundesbank BBSIS R02XX | 1997-08-07~2026-11-24 n=7438"
+   "msg": "Bundesbank BBSIS R02XX | 1997-08-07~2026-11-25 n=7439"
   },
   {
    "source": "eu_5y",
    "ok": true,
-   "msg": "Bundesbank BBSIS R05XX | 1997-08-07~2026-11-24 n=7438"
+   "msg": "Bundesbank BBSIS R05XX | 1997-08-07~2026-11-25 n=7439"
   },
   {
    "source": "eu_10y",
    "ok": true,
-   "msg": "Bundesbank BBSIS R10XX | 1997-08-07~2026-11-24 n=7438"
+   "msg": "Bundesbank BBSIS R10XX | 1997-08-07~2026-11-25 n=7439"
   },
   {
    "source": "eu_30y",
    "ok": true,
-   "msg": "Bundesbank BBSIS R30XX | 2000-08-01~2026-11-24 n=6686"
+   "msg": "Bundesbank BBSIS R30XX | 2000-08-01~2026-11-25 n=6687"
   },
   {
    "source": "fx_usdjpy",
@@ -144,22 +144,22 @@
   {
    "source": "wti",
    "ok": true,
-   "msg": "FRED DCOILWTICO | 1986-01-02~2026-11-17 n=9547"
+   "msg": "FRED DCOILWTICO | 1986-01-02~2026-11-24 n=9552"
   },
   {
    "source": "brent",
    "ok": true,
-   "msg": "FRED DCOILBRENTEU | 1987-05-20~2026-11-17 n=9132"
+   "msg": "FRED DCOILBRENTEU | 1987-05-20~2026-11-24 n=9137"
   },
   {
    "source": "cr_us_hy",
    "ok": true,
-   "msg": "FRED BAMLH0A0HYM2 | 2023-11-27~2026-11-23 n=784"
+   "msg": "FRED BAMLH0A0HYM2 | 2023-11-27~2026-11-24 n=785"
   },
   {
    "source": "cr_us_ig",
    "ok": true,
-   "msg": "FRED BAMLC0A0CM | 2023-11-27~2026-11-23 n=783"
+   "msg": "FRED BAMLC0A0CM | 2023-11-27~2026-11-24 n=784"
   },
   {
    "source": "cr_us_baa",
@@ -179,67 +179,67 @@
   {
    "source": "vol_vix",
    "ok": true,
-   "msg": "FRED VIXCLS | 1990-01-02~2026-11-23 n=9323"
+   "msg": "FRED VIXCLS | 1990-01-02~2026-11-24 n=9324"
   },
   {
    "source": "fx_dxy",
    "ok": true,
-   "msg": "Yahoo DX-Y.NYB | 1971-01-04~2026-11-24 n=14193"
+   "msg": "Yahoo DX-Y.NYB | 1971-01-04~2026-11-25 n=14194"
   },
   {
    "source": "silver",
    "ok": true,
-   "msg": "Yahoo SI=F | 2000-08-29~2026-11-24 n=6585"
+   "msg": "Yahoo SI=F | 2000-08-29~2026-11-25 n=6586"
   },
   {
    "source": "copper",
    "ok": true,
-   "msg": "Yahoo HG=F | 2000-08-29~2026-11-24 n=6588"
+   "msg": "Yahoo HG=F | 2000-08-29~2026-11-25 n=6589"
   },
   {
    "source": "vol_move",
    "ok": true,
-   "msg": "Yahoo ^MOVE | 2002-11-12~2026-11-24 n=5943"
+   "msg": "Yahoo ^MOVE | 2002-11-12~2026-11-25 n=5944"
   },
   {
    "source": "eq_spx",
    "ok": true,
-   "msg": "Yahoo ^GSPC | 1970-01-02~2026-11-24 n=14347"
+   "msg": "Yahoo ^GSPC | 1970-01-02~2026-11-25 n=14348"
   },
   {
    "source": "eq_ndx100",
    "ok": true,
-   "msg": "Yahoo ^NDX | 1985-10-01~2026-11-24 n=10368"
+   "msg": "Yahoo ^NDX | 1985-10-01~2026-11-25 n=10369"
   },
   {
    "source": "eq_ndx",
    "ok": true,
-   "msg": "Yahoo ^IXIC | 1971-02-05~2026-11-24 n=14069"
+   "msg": "Yahoo ^IXIC | 1971-02-05~2026-11-25 n=14070"
   },
   {
    "source": "eq_kospi",
    "ok": true,
-   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-25 n=7373"
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-24 n=7372"
   },
   {
    "source": "eq_kosdaq",
    "ok": true,
-   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-25 n=6434"
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-24 n=6433"
   },
   {
    "source": "eq_nikkei",
    "ok": true,
-   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-25 n=13988"
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-24 n=13987"
   },
   {
    "source": "eq_sx5e",
    "ok": true,
-   "msg": "Yahoo ^STOXX50E | 2007-03-30~2026-11-24 n=4928"
+   "msg": "Yahoo ^STOXX50E | 2007-03-30~2026-11-25 n=4929"
   },
   {
    "source": "vol_fg",
    "ok": true,
-   "msg": "CNN Fear & Greed | 2020-07-15~2026-11-24 n=1599"
+   "msg": "CNN Fear & Greed | 2020-07-15~2026-11-25 n=1600"
   },
   {
    "source": "m_us_cpi",
@@ -254,7 +254,7 @@
   {
    "source": "m_us_pce",
    "ok": true,
-   "msg": "FRED PCEPILFE YoY | 1960-01-01~2026-09-01 n=801"
+   "msg": "FRED PCEPILFE YoY | 1960-01-01~2026-10-01 n=802"
   },
   {
    "source": "m_us_unemp",
@@ -279,7 +279,7 @@
   {
    "source": "kr_corp_aa",
    "ok": true,
-   "msg": "ECOS 817Y002 010300000 (D) | 1995-01-03~2026-11-24 n=8095"
+   "msg": "ECOS 817Y002 010300000 (D) | 1995-01-03~2026-11-25 n=8096"
   },
   {
    "source": "m_kr_cpi",
@@ -304,12 +304,12 @@
   {
    "source": "gold",
    "ok": true,
-   "msg": "Yahoo GC=F | 2000-08-29~2026-11-24 n=6584"
+   "msg": "Yahoo GC=F | 2000-08-29~2026-11-25 n=6585"
   },
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-25 n=4452"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-25 n=4453"
   }
  ]
 }
