@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T04:31:29.184862+09:00",
+ "updated": "2026-11-26T13:02:16.271653+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -9,32 +9,32 @@
   {
    "source": "us_eff",
    "ok": true,
-   "msg": "FRED DFF | 1954-07-01~2026-11-23 n=26444"
+   "msg": "FRED DFF | 1954-07-01~2026-11-24 n=26445"
   },
   {
    "source": "us_2y",
    "ok": true,
-   "msg": "FRED DGS2 | 1976-06-01~2026-11-23 n=12616"
+   "msg": "FRED DGS2 | 1976-06-01~2026-11-24 n=12617"
   },
   {
    "source": "us_5y",
    "ok": true,
-   "msg": "FRED DGS5 | 1962-01-02~2026-11-23 n=16208"
+   "msg": "FRED DGS5 | 1962-01-02~2026-11-24 n=16209"
   },
   {
    "source": "us_10y",
    "ok": true,
-   "msg": "FRED DGS10 | 1962-01-02~2026-11-23 n=16208"
+   "msg": "FRED DGS10 | 1962-01-02~2026-11-24 n=16209"
   },
   {
    "source": "us_30y",
    "ok": true,
-   "msg": "FRED DGS30 | 1977-02-15~2026-11-23 n=12438"
+   "msg": "FRED DGS30 | 1977-02-15~2026-11-24 n=12439"
   },
   {
    "source": "kr_policy",
    "ok": true,
-   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-23 n=10063"
+   "msg": "ECOS 722Y001 0101000 (D) | 1999-05-06~2026-11-26 n=10066"
   },
   {
    "source": "kr_2y",
@@ -64,32 +64,32 @@
   {
    "source": "fx_usdkrw",
    "ok": true,
-   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-25 n=17555"
+   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-26 n=17556"
   },
   {
    "source": "jp_2y",
    "ok": true,
-   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-24 n=12984"
+   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-25 n=12985"
   },
   {
    "source": "jp_5y",
    "ok": true,
-   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-24 n=13345"
+   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-25 n=13346"
   },
   {
    "source": "jp_10y",
    "ok": true,
-   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-24 n=9984"
+   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-25 n=9985"
   },
   {
    "source": "jp_30y",
    "ok": true,
-   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-24 n=6668"
+   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-25 n=6669"
   },
   {
    "source": "jp_policy",
    "ok": true,
-   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-20 n=7079"
+   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-24 n=7080"
   },
   {
    "source": "eu_dfr",
@@ -164,17 +164,17 @@
   {
    "source": "cr_us_baa",
    "ok": true,
-   "msg": "FRED BAA10Y | 1986-01-02~2026-11-23 n=10223"
+   "msg": "FRED BAA10Y | 1986-01-02~2026-11-24 n=10224"
   },
   {
    "source": "infl_bei10",
    "ok": true,
-   "msg": "FRED T10YIE | 2003-01-02~2026-11-24 n=5978"
+   "msg": "FRED T10YIE | 2003-01-02~2026-11-25 n=5979"
   },
   {
    "source": "infl_real10",
    "ok": true,
-   "msg": "FRED DFII10 | 2003-01-02~2026-11-23 n=5977"
+   "msg": "FRED DFII10 | 2003-01-02~2026-11-24 n=5978"
   },
   {
    "source": "vol_vix",
@@ -219,17 +219,17 @@
   {
    "source": "eq_kospi",
    "ok": true,
-   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-24 n=7372"
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-26 n=7374"
   },
   {
    "source": "eq_kosdaq",
    "ok": true,
-   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-24 n=6433"
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-26 n=6435"
   },
   {
    "source": "eq_nikkei",
    "ok": true,
-   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-24 n=13987"
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-26 n=13989"
   },
   {
    "source": "eq_sx5e",
@@ -309,7 +309,7 @@
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-25 n=4453"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-26 n=4453"
   }
  ]
 }
