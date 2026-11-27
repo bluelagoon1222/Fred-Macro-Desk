@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:13:42.328630+09:00",
+ "updated": "2026-11-27T13:00:13.576963+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -64,47 +64,47 @@
   {
    "source": "fx_usdkrw",
    "ok": true,
-   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-26 n=17556"
+   "msg": "ECOS 731Y001 0000001 (D) | 1964-05-04~2026-11-27 n=17557"
   },
   {
    "source": "jp_2y",
    "ok": true,
-   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-25 n=12985"
+   "msg": "MOF JGB 2Y | 1974-09-24~2026-11-26 n=12986"
   },
   {
    "source": "jp_5y",
    "ok": true,
-   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-25 n=13346"
+   "msg": "MOF JGB 5Y | 1974-09-24~2026-11-26 n=13347"
   },
   {
    "source": "jp_10y",
    "ok": true,
-   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-25 n=9985"
+   "msg": "MOF JGB 10Y | 1986-07-05~2026-11-26 n=9986"
   },
   {
    "source": "jp_30y",
    "ok": true,
-   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-25 n=6669"
+   "msg": "MOF JGB 30Y | 1999-09-02~2026-11-26 n=6670"
   },
   {
    "source": "jp_policy",
    "ok": true,
-   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-24 n=7080"
+   "msg": "BOJ API FM01 STRDCLUCON (daily) | 1998-01-05~2026-11-25 n=7081"
   },
   {
    "source": "eu_dfr",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-26 n=10192"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-27 n=10193"
   },
   {
    "source": "eu_mro",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-26 n=7161"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-27 n=7162"
   },
   {
    "source": "eu_mlf",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-26 n=10192"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-27 n=10193"
   },
   {
    "source": "eu_2y",
@@ -219,17 +219,17 @@
   {
    "source": "eq_kospi",
    "ok": true,
-   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-25 n=7373"
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-27 n=7375"
   },
   {
    "source": "eq_kosdaq",
    "ok": true,
-   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-25 n=6434"
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-27 n=6436"
   },
   {
    "source": "eq_nikkei",
    "ok": true,
-   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-25 n=13988"
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-27 n=13990"
   },
   {
    "source": "eq_sx5e",
@@ -309,7 +309,7 @@
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-26 n=4454"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-27 n=4454"
   }
  ]
 }
