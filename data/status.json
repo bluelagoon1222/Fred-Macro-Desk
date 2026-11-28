@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:07:53.351230+09:00",
+ "updated": "2026-11-28T12:48:17.129042+09:00",
  "log": [
   {
    "source": "us_policy",
@@ -9,27 +9,27 @@
   {
    "source": "us_eff",
    "ok": true,
-   "msg": "FRED DFF | 1954-07-01~2026-11-24 n=26445"
+   "msg": "FRED DFF | 1954-07-01~2026-11-26 n=26447"
   },
   {
    "source": "us_2y",
    "ok": true,
-   "msg": "FRED DGS2 | 1976-06-01~2026-11-24 n=12617"
+   "msg": "FRED DGS2 | 1976-06-01~2026-11-25 n=12618"
   },
   {
    "source": "us_5y",
    "ok": true,
-   "msg": "FRED DGS5 | 1962-01-02~2026-11-24 n=16209"
+   "msg": "FRED DGS5 | 1962-01-02~2026-11-25 n=16210"
   },
   {
    "source": "us_10y",
    "ok": true,
-   "msg": "FRED DGS10 | 1962-01-02~2026-11-24 n=16209"
+   "msg": "FRED DGS10 | 1962-01-02~2026-11-25 n=16210"
   },
   {
    "source": "us_30y",
    "ok": true,
-   "msg": "FRED DGS30 | 1977-02-15~2026-11-24 n=12439"
+   "msg": "FRED DGS30 | 1977-02-15~2026-11-25 n=12440"
   },
   {
    "source": "kr_policy",
@@ -94,17 +94,17 @@
   {
    "source": "eu_dfr",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-27 n=10193"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.DFR.LEV | 1999-01-01~2026-11-28 n=10194"
   },
   {
    "source": "eu_mro",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-27 n=7162"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MRR_FR.LEV | 1999-01-01~2026-11-28 n=7163"
   },
   {
    "source": "eu_mlf",
    "ok": true,
-   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-27 n=10193"
+   "msg": "ECB FM.D.U2.EUR.4F.KR.MLFR.LEV | 1999-01-01~2026-11-28 n=10194"
   },
   {
    "source": "eu_2y",
@@ -169,12 +169,12 @@
   {
    "source": "infl_bei10",
    "ok": true,
-   "msg": "FRED T10YIE | 2003-01-02~2026-11-25 n=5979"
+   "msg": "FRED T10YIE | 2003-01-02~2026-11-27 n=5980"
   },
   {
    "source": "infl_real10",
    "ok": true,
-   "msg": "FRED DFII10 | 2003-01-02~2026-11-24 n=5978"
+   "msg": "FRED DFII10 | 2003-01-02~2026-11-25 n=5979"
   },
   {
    "source": "vol_vix",
@@ -219,17 +219,17 @@
   {
    "source": "eq_kospi",
    "ok": true,
-   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-26 n=7374"
+   "msg": "Yahoo ^KS11 | 1996-12-11~2026-11-27 n=7375"
   },
   {
    "source": "eq_kosdaq",
    "ok": true,
-   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-26 n=6435"
+   "msg": "Yahoo ^KQ11 | 2000-10-16~2026-11-27 n=6436"
   },
   {
    "source": "eq_nikkei",
    "ok": true,
-   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-26 n=13989"
+   "msg": "Yahoo ^N225 | 1970-01-05~2026-11-27 n=13990"
   },
   {
    "source": "eq_sx5e",
@@ -274,7 +274,7 @@
   {
    "source": "m_us_fedbs",
    "ok": true,
-   "msg": "FRED WALCL (weekly, 조달러) | 2002-12-18~2026-11-18 n=1249"
+   "msg": "FRED WALCL (weekly, 조달러) | 2002-12-18~2026-11-25 n=1250"
   },
   {
    "source": "kr_corp_aa",
@@ -309,7 +309,7 @@
   {
    "source": "btc",
    "ok": true,
-   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-27 n=4455"
+   "msg": "Yahoo BTC-USD | 2014-09-17~2026-11-28 n=4455"
   }
  ]
 }
